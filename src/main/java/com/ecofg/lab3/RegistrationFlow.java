@@ -3,6 +3,7 @@ package com.ecofg.lab3;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,7 +15,9 @@ public class RegistrationFlow {
     private static final int WAIT_LIMIT = 10;
 
     public static void registerNewUser() {
-        WebDriver localDriver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        WebDriver localDriver = new ChromeDriver(options);
         localDriver.manage().window().maximize();
         localDriver.get("https://demowebshop.tricentis.com/");
 

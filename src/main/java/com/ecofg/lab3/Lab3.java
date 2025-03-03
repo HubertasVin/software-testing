@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -15,7 +16,9 @@ public abstract class Lab3 {
 
     @Before
     public void initialize() {
-        webDriver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        webDriver = new ChromeDriver(options);
         webDriver.manage().window().maximize();
         waitFor = new WebDriverWait(webDriver, Duration.ofSeconds(DEFAULT_WAIT));
     }
