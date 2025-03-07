@@ -17,7 +17,7 @@ public abstract class Lab4 {
     @Before
     public void initialize() {
         ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
+        options.addArguments("--headless");
         webDriver = new ChromeDriver(options);
         webDriver.manage().window().maximize();
         waitFor = new WebDriverWait(webDriver, Duration.ofSeconds(DEFAULT_WAIT));
