@@ -1,4 +1,4 @@
-package com.ecofg.lab3;
+package com.ecofg;
 
 import org.junit.After;
 import org.junit.Before;
@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public abstract class Lab3 {
+public abstract class Lab4 {
     protected WebDriver webDriver;
     protected WebDriverWait waitFor;
     private static final int DEFAULT_WAIT = 10;
@@ -17,7 +17,7 @@ public abstract class Lab3 {
     @Before
     public void initialize() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
+//        options.addArguments("--headless");
         webDriver = new ChromeDriver(options);
         webDriver.manage().window().maximize();
         waitFor = new WebDriverWait(webDriver, Duration.ofSeconds(DEFAULT_WAIT));
